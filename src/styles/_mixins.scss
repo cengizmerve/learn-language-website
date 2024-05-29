@@ -1,9 +1,7 @@
-// Cihaz Kırılma Noktaları
 $breakpoint-desktop: 1024px;
 $breakpoint-tablet: 768px;
 $breakpoint-phone: 480px;
 
-// Mixinler
 @mixin desktop {
   @media (min-width: #{$breakpoint-desktop}) {
     @content;
