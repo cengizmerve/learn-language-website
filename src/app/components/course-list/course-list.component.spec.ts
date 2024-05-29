@@ -95,6 +95,5 @@ describe('CourseListComponent', () => {
     component.ngOnInit();
     fixture.detectChanges();
     expect(component.courses).toBeUndefined();
-    // You can also check for an error message if you have implemented one
   });
 });
