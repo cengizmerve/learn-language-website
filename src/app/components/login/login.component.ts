@@ -32,7 +32,7 @@ export class LoginComponent {
       this.authService.login();
       this.router.navigate(['/courses'])
     },
-    error => console.error('Giriş hatası:', error)
+    error => console.error('Login error', error)
 );
     }
   }
