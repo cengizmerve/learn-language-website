@@ -1,0 +1,36 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="register-container">
+    <mat-card class="register-content">
+      <p>
+        <mat-card-title>Login</mat-card-title>
+      </p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input id="email" type="email" matInput formControlName="email"
+               placeholder="Ex. pat@example.com" required>
+        <div *ngIf="(loginForm.get('email')?.invalid && loginForm.get('email')?.touched)">
+          Email is <strong>required</strong>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input id="password" formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
+        <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is <strong>required</strong>
+        </div>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Sign Up</button>
+
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+    </mat-card>
+  </div>
+</form>
+
+

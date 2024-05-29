@@ -1,0 +1,92 @@
+// Mixinler
+@mixin phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Stiller
+.user-progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  @include phone {
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+}
+
+.user-progress-card {
+  width: 250px;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  @include phone {
+    width: calc(50% - 20px);
+    margin: 10px 10px 10px 0;
+  }
+}
+
+.user-progress-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-progress-card h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.user-progress-card p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.example-section {
+  margin: 15px 0;
+}
+
+.header-container {
+  padding-left: 2.4rem;
+  background: #2d2f31;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  color: #FFFFFF;
+}
+
+.header-title {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-separator {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-description {
+  font-size: 12px;
+  max-width: 600px; /* Limit the width of the description text */
+}

@@ -1,0 +1,12 @@
+
+  <ng-container *ngIf="authService.isLoggedIn()">
+    <mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="start center">
+      <span>Course Management</span>
+      <div class="menu-items" fxLayout="row" fxLayoutGap="15px">
+        <a mat-button [routerLink]="['/courses']">Course List</a>
+        <a mat-button [routerLink]="['/user-progress']">Progress</a>
+      </div>
+    </mat-toolbar>
+  </ng-container>
+
+

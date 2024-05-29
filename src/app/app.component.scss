@@ -1,0 +1,17 @@
+@import '../styles/mixins'; // Doğru yolu kullanarak mixin'leri içe aktarın
+
+.content-container {
+  padding: 20px;
+
+  @include phone {
+    padding: 10px;
+  }
+
+  @include tablet {
+    padding: 15px;
+  }
+
+  @include desktop {
+    padding: 20px;
+  }
+}

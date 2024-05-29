@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'mixins'; // Mixin'leri içe aktarın
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @include phone {
+    font-size: 14px;
+  }
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include desktop {
+    font-size: 18px;
+  }
+}
+
+* {
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+
+  @include phone {
+    padding: 10px;
+  }
+
+  @include tablet {
+    padding: 15px;
+  }
+
+  @include desktop {
+    padding: 20px;
+  }
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Arka plan rengi ve saydamlığı */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 200px;
+}
+
+mat-sidenav-content {
+  padding: 20px;
+}
+// Breakpoints
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 480px;
+
+// Mixinler
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$breakpoint-phone}) {
+    @content;
+  }
+}

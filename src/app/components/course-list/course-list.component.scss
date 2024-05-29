@@ -1,0 +1,88 @@
+// Mixinler
+@mixin phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+.container {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @include phone {
+    padding: 5px;
+  }
+
+  @include tablet {
+    padding: 8px;
+  }
+
+  @include desktop {
+    padding: 10px;
+  }
+}
+
+.example-card {
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  margin: 10px;
+  max-width: calc(25% - 20px);
+
+  @include phone {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+
+  @include tablet {
+    flex: 1 1 calc(33.3333% - 20px);
+    max-width: calc(33.3333% - 20px);
+  }
+
+  @include desktop {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+  }
+}
+
+.header-container {
+  padding-left: 2.4rem;
+  background: #2d2f31;
+  display: flex;
+  align-items: center;
+  height: 120px;
+  color: #FFFFFF;
+}
+
+.header-title {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-separator {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.header-description {
+  font-size: 12px;
+  max-width: 600px; /* Limit the width of the description text */
+}
+
+
+
+
+

@@ -1,0 +1,52 @@
+// Mixinler
+@mixin phone {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 769px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Stiller
+.register-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../../../assets/images/login.svg');
+  background-size: cover;
+  justify-content: end;
+
+  @include phone {
+    justify-content: center;
+  }
+}
+
+.register-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 5%;
+  margin-right: 50px;
+
+  @include phone {
+    width: 90%;
+    margin-right: 0;
+  }
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,33 @@
+<div class="header-container">
+    <span class="header-title">My Progress</span>
+    <span class="header-separator">|</span>
+    <span class="header-description">
+  This interface represents the progress of a user in a specific course. It includes information such as the user ID, course ID, course name, completed lessons and quizzes, as well as the total number of lessons and quizzes in the course.
+    </span>
+  </div>
+
+  <div class="user-progress-container">
+  <div class="user-progress-card" *ngFor="let progress of userProgressList">
+    <h3>{{ progress.courseName }}</h3>
+    <p>Completed Lessons: {{ progress.completedLessons }}</p>
+    <p>Total Lessons: {{ progress.totalLessons }}</p>
+    <section class="example-section">
+      <mat-progress-bar
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="progress.completedLessons / progress.totalLessons * 100">
+      </mat-progress-bar>
+    </section>
+    <p>Completed Quizzes: {{ progress.completedQuizzes }}</p>
+    <p>Total Quizzes: {{ progress.totalQuizzes }}</p>
+    <section class="example-section">
+      <mat-progress-bar
+        class="example-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="progress.completedQuizzes / progress.totalQuizzes * 100">
+      </mat-progress-bar>
+    </section>
+  </div>
+</div>

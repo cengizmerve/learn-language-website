@@ -1,0 +1,22 @@
+<div class="header-container">
+  <span class="header-title">My Learning</span>
+  <span class="header-separator">|</span>
+  <span class="header-description">Welcome to "My Learning". Here, you'll find a curated list of courses designed to enhance your language skills. Each course offers comprehensive materials and interactive content to help you master the language.</span>
+</div>
+
+
+<div class="container">
+    <mat-divider></mat-divider>
+      <mat-card class="example-card" *ngFor="let course of courses">
+        <mat-card-header>
+          <mat-card-title (click)="viewCourseDetails(course.id)">{{ course.title }}</mat-card-title>
+              <img mat-card-sm-image src="../../../assets/images/coursess.svg" alt="Courses">
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ course.description }}</p>
+          <p>Instructor: {{ course.instructor }}</p>
+        </mat-card-content>
+      </mat-card>
+  </div>
+
+

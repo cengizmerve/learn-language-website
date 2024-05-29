@@ -1,0 +1,7 @@
+<app-menu-bar></app-menu-bar>
+  <div *ngIf="loading" class="spinner-overlay">
+    <mat-spinner class="spinner"></mat-spinner>
+  </div>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>

@@ -1,0 +1,13 @@
+<div *ngIf="course" class="course-detail-container">
+  <div style="display: flex; justify-content: center;">
+    <img mat-card-md-image src="../../../../assets/images/course-detail.svg" alt="Course Detail">
+  </div>
+  <h2>{{ course?.title }}</h2>
+  <div class="course-details">
+    <span>{{ course?.description }}</span>
+    <span>Instructor: {{ course?.instructor }}</span>
+    <span>Duration: {{ course.duration }}</span>
+    <span>Level: {{ course.difficulty }}</span>
+    <button mat-raised-button color="primary" type="submit" (click)="enrollInCourse()">Add</button>
+  </div>
+</div>
