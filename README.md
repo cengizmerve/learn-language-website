@@ -2,6 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.16.
 
+This project is an Angular application for a language learning platform. It includes a course list and user progress tracking features. The application is styled using Angular Material and SCSS.
+
+## Features
+
+- **Course List**: Displays a list of available courses.
+- **Course Details**: Provides detailed information about each course.
+- **User Progress**: Tracks the user's progress in each course.
+
+## Technologies Used
+
+- **Angular**: A platform and framework for building single-page client applications using HTML and TypeScript.
+- **Angular Material**: A UI component library for Angular developers.
+- **HTML**: The standard markup language for creating web pages.
+- **SCSS**: A preprocessor scripting language that is interpreted or compiled into CSS.
+
+## Prerequisites
+
+- **Node.js**: Make sure you have Node.js installed. You can download it from [nodejs.org](https://nodejs.org/).
+- **Angular CLI**: Install the Angular CLI globally using the following command:
+  ```sh
+  npm install -g @angular/cli
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
